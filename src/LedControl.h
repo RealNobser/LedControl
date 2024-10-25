@@ -27,7 +27,7 @@
 #ifndef LedControl_h
 #define LedControl_h
 
-#if defined(ESP32) || defined (ESP8266)SP32
+#if defined(ESP32) || defined (ESP8266)
 #else
 #include <avr/pgmspace.h>
 #endif
