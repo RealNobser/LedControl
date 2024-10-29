@@ -42,6 +42,7 @@
  * Segments to be switched on for characters and digits on
  * 7-Segment Displays
  */
+#ifdef INLCUDE_DIGITS
 const static byte charTable [] PROGMEM  = {
     B01111110,B00110000,B01101101,B01111001,B00110011,B01011011,B01011111,B01110000,
     B01111111,B01111011,B01110111,B00011111,B00001101,B00111101,B01001111,B01000111,
@@ -60,7 +61,7 @@ const static byte charTable [] PROGMEM  = {
     B01100111,B00000000,B00000000,B00000000,B00000000,B00000000,B00000000,B00000000,
     B00000000,B00000000,B00000000,B00000000,B00000000,B00000000,B00000000,B00000000
 };
-
+#endif
 class LedControl {
     private :
         /* The array for shifting the data to the devices */
@@ -161,7 +162,7 @@ class LedControl {
          *		corresponding Led.
          */
         void setColumn(int addr, int col, byte value);
-
+#ifdef INCLUDE_DIGITS
         /* 
          * Display a hexadecimal digit on a 7-Segment Display
          * Params:
@@ -185,6 +186,7 @@ class LedControl {
          * dp	sets the decimal point.
          */
         void setChar(int addr, int digit, char value, boolean dp);
+#endif
 };
 
 #endif	//LedControl.h
